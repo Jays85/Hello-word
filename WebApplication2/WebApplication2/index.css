@@ -1,0 +1,153 @@
+﻿body
+{
+    margin:0px;
+    padding:0px;
+    background:url(images/header_bg.png) repeat-x;
+    font-size:14px;
+    color:#333;
+    }
+    body a
+    {
+        text-decoration:none;
+        color:#333;
+        }
+#header
+{
+    height:30px;
+    width:900px;   
+    margin:0 auto;
+    }
+#header .logo
+{
+    width:100px;
+    height:30px;
+    float:left;
+    }
+#header .logo img
+{
+    display:block; 
+    }    
+#header .member
+{
+    width:96px;
+    height:30px;
+    text-align:center;
+    line-height:30px;
+    float:right;
+    background:url(images/arrow.png) no-repeat 5px center;
+    cursor:pointer;
+    }
+#header ul
+{
+    top:30px;
+    margin:0;
+    padding:0;
+    width:95px;
+    position:absolute;
+    background:#fbf7e1;
+    border: 1px solid #999;
+    border-top: none;
+    text-align:left;
+    list-style-type:none;
+    display:none;
+    }
+#header ul li
+{
+
+	height:25px;
+	line-height:25px;
+	text-indent:20px;
+	letter-spacing:1px;
+    }
+#header ul li a
+{
+
+    background:url(images/arrow3.gif) no-repeat 5px 45%;
+    text-decoration:none;
+    color:#333;
+    display:block;
+    }
+    #header ul li a:hover
+    {
+        display:block;
+        background:#f60 url(images/arrow4.gif) no-repeat 5px 45%;
+        }
+#header .login
+{
+    float:right;
+    height:30px;
+    line-height:30px;
+    cursor:pointer;
+    width:35px; 
+    }
+#login
+{
+    margin:0;
+    padding:0;
+    width:350px;
+    height:250px;
+    border:1px solid #ccc;
+    position:absolute;
+    display:none;
+    z-index:9999;
+    background:#fff;
+    }
+    #login h2
+    {
+        font-size:14px;
+        height:40px;
+        line-height:40px;
+        color:#666;
+        border-bottom:1px solid #ccc;
+        background:url(images/login_header.png) repeat-x;
+        margin:0;
+        padding:0;
+        text-align:center;
+        cursor:move;
+        }
+        #login h2 img
+        {
+            float:right;
+            top:12px;
+            right:20px;
+            position:relative;
+            cursor:pointer;
+            }
+        #login div.user,#login div.pass
+        {
+            color:#666;
+            text-align:center;
+            margin:25px;
+            font-size:16px;
+            }
+        #login input.text
+        {
+            width:200px;
+            height:20px;
+            border:1px solid #ccc;
+            }
+        #login .button
+        {
+                        text-align:center;
+            }    
+        #login input.submit
+        {
+            background:url(images/login_button.png);
+            width:107px;
+            height:30px;
+            border:0;
+            cursor:pointer;
+            }
+#screen
+{
+    width:100%;
+    height:100%;
+    background:#000;
+    position:absolute;
+    top:0;
+    left:0;
+    filter:alpha(opacity=30);
+	opacity:0.3;
+	z-index:9998;
+	display:none;
+    }
