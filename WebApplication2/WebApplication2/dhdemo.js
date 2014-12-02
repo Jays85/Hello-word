@@ -1,3 +1,3 @@
 ﻿$(function () {
-    $('#bt').click(function () { alert('213'); });
+    alert($('#box').nodeType);
 });
