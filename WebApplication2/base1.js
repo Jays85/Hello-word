@@ -4,9 +4,8 @@ var $ = function (args) {
  }
 function Base(args) {
     this.Ems = [];
-    debugger;
      if (typeof args == 'string') {
-         if (args.indexOf != -1) {
+         if (args.indexOf(' ') != -1) {
              var tempelements = args.split(' ');
              var childnode = [];
              var childelement = [];
@@ -73,9 +72,10 @@ Base.prototype.last = function () {
     return this.Ems[this.Ems.length - 1];
 }
  //addDomLoaded
- Base.prototype.ready = function (fn) {
-     addDomLoaded(fn);
- };
+Base.prototype.ready = function (fn) {
+    debugger;
+    addDomLoaded(fn);
+};
  Base.prototype.find = function (str) {
      var childelement = [];
      for (var i = 0; i < this.Ems.length; i++) {
@@ -102,6 +102,7 @@ Base.prototype.last = function () {
  }
  //跟据ID获取元素
  Base.prototype.getId = function (id) {
+     debugger;
      return document.getElementById(id);
  };
  //跟据标签名获取元素

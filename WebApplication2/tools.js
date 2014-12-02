@@ -13,6 +13,8 @@
 
 //DOM加载
 function addDomLoaded(fn) {
+    debugger;
+    alert(typeof fn);
     var isReady = false;
     var timer = null;
     function doReady() {
@@ -46,7 +48,9 @@ function addDomLoaded(fn) {
             try {
                 document.documentElement.doScroll('left');
                 doReady();
-            } catch (e) { };
+            }
+            catch (e) { 
+             };
         }, 1);
     }
 }
