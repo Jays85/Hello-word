@@ -13,8 +13,6 @@
 
 //DOM加载
 function addDomLoaded(fn) {
-    debugger;
-    alert(typeof fn);
     var isReady = false;
     var timer = null;
     function doReady() {

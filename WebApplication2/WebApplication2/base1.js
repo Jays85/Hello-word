@@ -4,6 +4,7 @@ var $ = function (args) {
  }
 function Base(args) {
     this.Ems = [];
+    debugger;
      if (typeof args == 'string') {
          if (args.indexOf(' ') != -1) {
              var tempelements = args.split(' ');
@@ -73,7 +74,6 @@ Base.prototype.last = function () {
 }
  //addDomLoaded
 Base.prototype.ready = function (fn) {
-    debugger;
     addDomLoaded(fn);
 };
  Base.prototype.find = function (str) {
@@ -102,7 +102,6 @@ Base.prototype.ready = function (fn) {
  }
  //跟据ID获取元素
  Base.prototype.getId = function (id) {
-     debugger;
      return document.getElementById(id);
  };
  //跟据标签名获取元素
