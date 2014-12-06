@@ -73,7 +73,6 @@ Base.prototype.last = function () {
 }
  //addDomLoaded
 Base.prototype.ready = function (fn) {
-    debugger;
     addDomLoaded(fn);
 };
  Base.prototype.find = function (str) {
@@ -102,7 +101,7 @@ Base.prototype.ready = function (fn) {
  }
  //跟据ID获取元素
  Base.prototype.getId = function (id) {
-     debugger;
+
      return document.getElementById(id);
  };
  //跟据标签名获取元素
@@ -307,6 +306,7 @@ Base.prototype.animate = function (obj) {
         clearInterval(window.timer);
         timer = setInterval(function () {
             element.style[attr] = tCss(element, attr) + step + 'px';
+            document.getElementById('aaa').innerText += tCss(element, attr) + '</br>';
             if (step > 0 && tCss(element, attr) >= target) {
                 element.style[attr] = target + 'px';
                 clearInterval(timer);
@@ -322,4 +322,6 @@ Base.prototype.animate = function (obj) {
 Base.prototype.Extend = function (name, fn) {
     Base.prototype[name] = fn;
 }
-
+Base.prototype.Test = function () {
+    alert('Test');
+}

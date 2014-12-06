@@ -13,8 +13,6 @@
 
 //DOM加载
 function addDomLoaded(fn) {
-    debugger;
-    alert(typeof fn);
     var isReady = false;
     var timer = null;
     function doReady() {
@@ -76,11 +74,12 @@ function tAddRule(sheetstyle,cssrule,csstext,position) {
 }
 //兼容IE非IE获取行内，外连CSS属性值
 function tCss(element, attr) {
+
     var value;
     if (typeof window.getComputedStyle != 'undefined') {//判断非IE方法是否合法，如果合法就调用
         value=parseInt(window.getComputedStyle(element, null)[attr]);
     }
-    else if (typeof element.currentStyle != 'undefined') {//判断IE方法是否合法，如果合法调用
+    else if (typeof element.currentStyle != 'undefined'||typeof element.currentStyle !=null) {//判断IE方法是否合法，如果合法调用
         value=parseInt(element.currentStyle[attr]);
     }
     else {

@@ -1,3 +1,7 @@
 ﻿$(function () {
-    alert($('#box').nodeType);
+    $('#button').Click(function () {
+        $('#box').animate({
+            'alter': 500
+        })
+    });
 });
