@@ -1,0 +1,19 @@
+d:\my documents\visual studio 2010\Projects\WebApplication2\WebApplication2\bin\WebApplication2.dll
+d:\my documents\visual studio 2010\Projects\WebApplication2\WebApplication2\bin\WebApplication2.pdb
+d:\my documents\visual studio 2010\Projects\WebApplication2\WebApplication2\obj\Debug\ResolveAssemblyReference.cache
+d:\my documents\visual studio 2010\Projects\WebApplication2\WebApplication2\obj\Debug\WebApplication2.dll
+d:\my documents\visual studio 2010\Projects\WebApplication2\WebApplication2\obj\Debug\WebApplication2.pdb
+C:\Users\Administrator\Desktop\dhdemo\WebApplication2\WebApplication2\bin\WebApplication2.dll
+C:\Users\Administrator\Desktop\dhdemo\WebApplication2\WebApplication2\bin\WebApplication2.pdb
+C:\Users\Administrator\Desktop\dhdemo\WebApplication2\WebApplication2\obj\Debug\WebApplication2.dll
+C:\Users\Administrator\Desktop\dhdemo\WebApplication2\WebApplication2\obj\Debug\WebApplication2.pdb
+F:\code\dhdemo\dhdemo\WebApplication2\WebApplication2\bin\WebApplication2.dll
+F:\code\dhdemo\dhdemo\WebApplication2\WebApplication2\bin\WebApplication2.pdb
+F:\code\dhdemo\dhdemo\WebApplication2\WebApplication2\obj\Debug\ResolveAssemblyReference.cache
+F:\code\dhdemo\dhdemo\WebApplication2\WebApplication2\obj\Debug\WebApplication2.dll
+F:\code\dhdemo\dhdemo\WebApplication2\WebApplication2\obj\Debug\WebApplication2.pdb
+F:\gittest\Hello-word\WebApplication2\WebApplication2\bin\WebApplication2.dll
+F:\gittest\Hello-word\WebApplication2\WebApplication2\bin\WebApplication2.pdb
+F:\gittest\Hello-word\WebApplication2\WebApplication2\obj\Debug\WebApplication2.dll
+F:\gittest\Hello-word\WebApplication2\WebApplication2\obj\Debug\WebApplication2.pdb
+F:\gittest\Hello-word\WebApplication2\WebApplication2\obj\Debug\WebApplication2.csprojResolveAssemblyReference.cache
