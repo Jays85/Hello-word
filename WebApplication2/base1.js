@@ -294,6 +294,7 @@ Base.prototype.operationLock = function (status) {
 }
 //移动动画
 Base.prototype.animate = function (obj) {
+    var span = document.getElementById('p');
     for (var i = 0; i < this.Ems.length; i++) {
         var element = this.Ems[i];
         var attr = obj['attr'] != undefined ? obj['attr'] : 'left';
@@ -301,20 +302,25 @@ Base.prototype.animate = function (obj) {
         var t = 50;
         var start = obj['start'] != undefined ? obj['start'] : tCss(element, attr);
         var target = obj['alter'] + start;
-        if (start > target) setp = -setp;
+        debugger;
+        if (start > target) setp = -step;
         element.style[attr] = start + 'px';
         clearInterval(window.timer);
         timer = setInterval(function () {
-            element.style[attr] = tCss(element, attr) + step + 'px';
-            document.getElementById('aaa').innerText += tCss(element, attr) + '</br>';
-            if (step > 0 && tCss(element, attr) >= target) {
-                element.style[attr] = target + 'px';
-                clearInterval(timer);
-            } else if (step < 0 && tCss(element, attr) <= target) {
-                element.style[attr] = target + 'px';
-                clearInterval(timer);
+            span.innerText += tCss(element, attr) + '<br />';
+            if (step > 0 && Math.abs(tCss(element, attr) - target) <= step) {
+                settarget();
+            } else if (step < 0 && (tCss(element, attr) - target) <= Math.abs(step)) {
+                settarget();
+            }
+            else {
+                element.style[attr] = tCss(element, attr) + step + 'px';
             }
         }, t);
+        function settarget() {
+            element.style[attr] = target + 'px';
+            clearInterval(timer);
+        }
     }
     return this;
 }
