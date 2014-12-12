@@ -77,13 +77,13 @@ function tCss(element, attr) {
 
     var value;
     if (typeof window.getComputedStyle != 'undefined') {//判断非IE方法是否合法，如果合法就调用
-        value=parseInt(window.getComputedStyle(element, null)[attr]);
+        value=window.getComputedStyle(element, null)[attr];
     }
     else if (typeof element.currentStyle != 'undefined'||typeof element.currentStyle !=null) {//判断IE方法是否合法，如果合法调用
-        value=parseInt(element.currentStyle[attr]);
+        value=element.currentStyle[attr];
     }
     else {
-        value=parseInt(element.style[attr]); //读取行内style
+        value=element.style[attr]; //读取行内style
     }
     return value;
 }

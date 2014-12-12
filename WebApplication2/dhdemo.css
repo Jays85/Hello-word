@@ -7,6 +7,8 @@
    position:absolute;
    top:100px;
    left:100px;
+   opacity:0.3;
+   filter:alpha(opacity=30);
     }
 #aaa
 {

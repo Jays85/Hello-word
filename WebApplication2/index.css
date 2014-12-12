@@ -49,7 +49,7 @@
     border-top: none;
     text-align:left;
     list-style-type:none;
-    display:none;
+    display:block;
     }
 #header ul li
 {

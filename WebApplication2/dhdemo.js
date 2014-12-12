@@ -1,7 +1,8 @@
 ﻿$(function () {
     $('#button').Click(function () {
         $('#box').animate({
-            'alter': -200,
+            'attr':'o',
+            'target': 100,
             'step': 9
         })
     });

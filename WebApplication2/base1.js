@@ -251,7 +251,7 @@ Base.prototype.reSize = function (fn) {
 Base.prototype.Css = function (attr, value) {
     for (var i = 0; i < this.Ems.length; i++) {
         if (arguments.length == 1) {//判断只有一个属性那么就取读CSS属性值
-            return tCss(this.Ems[i], attr);
+            return parseInt(tCss(this.Ems[i], attr));
         }
         else {
             this.Ems[i].style[attr] = value;
@@ -297,28 +297,68 @@ Base.prototype.animate = function (obj) {
     var span = document.getElementById('p');
     for (var i = 0; i < this.Ems.length; i++) {
         var element = this.Ems[i];
-        var attr = obj['attr'] != undefined ? obj['attr'] : 'left';
+        var attr = obj['attr'] == 'x' ? 'left' : obj['attr'] == 'y' ? 'top' :
+                   obj['attr'] == 'w' ? 'width' : obj['attr'] == 'h' ? 'height' :
+                   obj['attr'] == 'o' ? 'opacity' : 'left';
         var step = obj['step'] != undefined ? obj['step'] : 10;
-        var t = 50;
-        var start = obj['start'] != undefined ? obj['start'] : tCss(element, attr);
-        var target = obj['alter'] + start;
-        debugger;
-        if (start > target) setp = -step;
-        element.style[attr] = start + 'px';
+        var t = obj['t'] != undefined ? obj['t'] : 30;
+        var start = obj['start'] != undefined ? obj['start'] : attr == 'opacity' ? parseFloat(tCss(element, attr)) * 100 : parseInt(tCss(element, attr));
+        var target = obj['target'];
+        var alter = obj['alter'];
+        var speed = obj['speed'] != undefined ? obj['speed'] : 6;
+        var type = obj['type'] == 1 ? 'constant' : obj['type'] == 1 ? 'buffer' : 'buffer';
+        if (start > target) step = -step;
+        if (attr == 'opacity') {
+            element.style.opacity = parseInt(start) / 100;
+            element.style.filter = 'alpha(opacity=' + parseInt(start) + ')';
+        } else {
+            element.style[attr] = start + 'px';
+        }
         clearInterval(window.timer);
         timer = setInterval(function () {
-            span.innerText += tCss(element, attr) + '<br />';
-            if (step > 0 && Math.abs(tCss(element, attr) - target) <= step) {
-                settarget();
-            } else if (step < 0 && (tCss(element, attr) - target) <= Math.abs(step)) {
-                settarget();
+
+            if (type == 'buffer') {
+                step = attr == 'opacity' ? (target - parseFloat(tCss(element, attr)) * 100) / speed : (target - parseInt(tCss(element, attr))) / speed;
+                step = step > 0 ? Math.ceil(step) : Math.floor(step);
+                //                document.getElementById('p').innerHTML += step + '<br />';
+            }
+            //            span.innerText += parseInt(tCss(element, attr)) + '<br />';
+            if (attr == 'opacity') {
+                if (step == 0) {
+                    setopacity();
+                }
+                else if (step > 0 && Math.abs(parseFloat(tCss(element, attr)) * 100 - target) <= step) {
+                       setopacity();
+                } else if (step < 0 && (parseFloat(tCss(element, attr)) * 100 - target) <= Math.abs(step)) {
+                       setopacity();
+                }
+                else {
+                    var temp = parseFloat(tCss(element, attr)) * 100;
+                    element.style.opacity = parseInt(temp + step) / 100;
+                    element.style.filter = 'alpha(opacity=' + parseInt(temp + step) + ')';
+                }
             }
             else {
-                element.style[attr] = tCss(element, attr) + step + 'px';
+                if (step == 0) {
+                    settarget();
+                }
+                else if (step > 0 && Math.abs(parseInt(tCss(element, attr)) - target) <= step) {
+                    settarget();
+                } else if (step < 0 && (parseInt(tCss(element, attr)) - target) <= Math.abs(step)) {
+                    settarget();
+                }
+                else {
+                    element.style[attr] = parseInt(tCss(element, attr)) + step + 'px';
+                }
             }
-        }, t);
+        }, 500);
         function settarget() {
             element.style[attr] = target + 'px';
+            clearInterval(timer);
+        }
+        function setopacity() {
+            element.style.opacity = parseInt(target) / 100;
+            element.style.filter = 'alpha(opacity=' + parseInt(target) + ')';
             clearInterval(timer);
         }
     }
