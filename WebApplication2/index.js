@@ -9,6 +9,7 @@ $(function () {
         ul.hide();
     });
     var login = $('#login');
+    debugger;
     var screen = $('#screen');
     login.setCenter(350, 250).reSize(function () {
         login.setCenter(350, 250);
@@ -23,7 +24,7 @@ $(function () {
 
 
     $('div div p').Css('color', 'red');
-
+    alert(tCss($('#share').Ems[0],'height'));
 
 
 
