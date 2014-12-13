@@ -169,12 +169,13 @@ addEvent.equal = function (es, fn) {
 function removeEvent(obj, type, fn) {
     if (typeof obj.removeEventListener != 'undefined') {
         obj.removeEventListener(type, fn, false);
-    } else {
+    } else if(obj.events) {
         for (var i in obj.events[type]) {
             if (obj.events[type][i] == fn) {
                 delete obj.events[type][i];
-             }
-           }
+            }
+        } 
+    
     }
 }
 //获取事件元素
